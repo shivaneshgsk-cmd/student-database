@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Management System</h1>
+
+        <form id="studentForm">
+
+            <input type="hidden" id="studentId">
+
+            <input type="text" id="name"
+                   placeholder="Student Name" required>
+
+            <input type="email" id="email"
+                   placeholder="Email Address" required>
+
+            <input type="text" id="course"
+                   placeholder="Course" required>
+
+            <button type="submit" id="submitBtn">
+                Add Student
+            </button>
+
+            <button type="button" id="cancelBtn"
+                    hidden onclick="resetForm()">
+                Cancel Edit
+            </button>
+
+        </form>
+
+        <h2>Student Records</h2>
+
+        <p id="message"></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentTable"></tbody>
+        </table>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
